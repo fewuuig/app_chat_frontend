@@ -1,0 +1,111 @@
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #f1f5f9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://lh3.googleusercontent.com/aida/AP1WRLtUCbSYh76pRrJYUtT1O0zheB_JhDBeJnjCHkKRNMDS83JPpTEcLQVYez7x55U-NCUDzlf9vncIUM2clDwP00LrVsyfZ2R3m6tFSyTse7WigpD1NJZPsKQQvyifRc6gRA18e5INy5e9JLEofeAuP1v6ZsoTFAtosaUpeEVfGd2100lw8ReRW8QHrmsQIdDw9bxmQgcgz7AQ_XpH__Eca_cDJkCaFkhRUIgYcgdmpmHy9IbXC8vjEhikcaNw');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.auth-bg-shader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.auth-bg-shader canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.auth-header {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    padding: 2rem 1rem;
+    width: 100%;
+    z-index: 10;
+    position: relative;
+    justify-content: flex-start;
+}
+
+@media (min-width: 768px) {
+    .auth-header {
+        padding: 2rem 2.5rem;
+    }
+}
+
+.auth-header-inner {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+}
+
+.auth-main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 10;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .auth-main {
+        padding: 2.5rem;
+    }
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 2rem;
+    justify-items: center;
+}
+
+.auth-footer {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    z-index: 10;
+    position: relative;
+    gap: 1.5rem;
+}
+
+.auth-footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.auth-footer-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: #94a3b8;
+    transition: color 0.2s;
+}
+
+.auth-footer-links a:hover {
+    color: #60a5fa;
+}
