@@ -1,14 +1,20 @@
 import api from './api';
-import { LoginRequest, User } from '../types/auth';
-
-export interface LoginResponse {
-    accessToken: string;
-    refreshToken: string;
-}
+import { LoginRequest, SignupRequest, ActiveRequest, User, LoginResponse, ApiResponse } from '../types/auth';
 
 export const authService = {
     login: async (data: LoginRequest): Promise<LoginResponse> => {
         const response = await api.post<LoginResponse>('/account/login', data);
+        return response.data;
+    },
+
+    signup: async (data: SignupRequest): Promise<{ message: string }> => {
+        const response = await api.post<any>('/account/signup', data);
+        const message = (response as any).apiMessage || 'Đăng ký thành công! Vui lòng kiểm tra email để xác thực.';
+        return { message };
+    },
+
+    activeAccount: async (data: ActiveRequest): Promise<LoginResponse> => {
+        const response = await api.post<LoginResponse>('/account/active', data);
         return response.data;
     },
 

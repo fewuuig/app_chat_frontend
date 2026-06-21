@@ -15,15 +15,34 @@ export interface LoginRequest {
 
 export interface SignupRequest {
     username: string;
-    email: string;
     password: string;
-    confirmPassword: string;
+    displayName: string;
+    email: string;
+    sex: boolean;
 }
 
 export interface AuthResponse {
     user: User;
     token: string;
     refreshToken: string;
+}
+
+export interface ActiveRequest {
+    email: string;
+    verifyCode: string;
+}
+
+export interface LoginResponse {
+    accessToken: string;
+    refreshToken: string;
+}
+
+export interface ApiResponse<T = any> {
+    success: boolean;
+    message: string;
+    data: T;
+    meta: any;
+    error: any;
 }
 
 export interface VerifyRequest {

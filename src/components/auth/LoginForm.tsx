@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../stores/AuthContext';
 import './LoginForm.css';
 
@@ -8,6 +9,7 @@ const LoginForm: React.FC = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [localError, setLocalError] = useState<string | null>(null);
     const { login, isLoading, error, clearError } = useAuthContext();
+    const navigate = useNavigate();
 
     const displayError = localError || error;
 
@@ -127,7 +129,7 @@ const LoginForm: React.FC = () => {
             </div>
 
             <div className="signup-prompt">
-                            <p>Chưa có tài khoản? <a href="/signup" className="signup-link">Đăng ký ngay</a></p>
+                            <p>Chưa có tài khoản? <a href="/signup" className="signup-link" onClick={(e) => { e.preventDefault(); navigate('/signup'); }}>Đăng ký ngay</a></p>
             </div>
         </div>
     );
